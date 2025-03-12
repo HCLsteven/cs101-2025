@@ -1,19 +1,17 @@
 #include <stdio.h>
+#include <string.h>  
 
-int main() {
-    char a[] = "Hello";  
-    int len = 0;        
+int main(){
+    char a[100];
+    scanf("%s", a);  
 
-    while (a[len] != '\0') {
-        len++;
+    int len = strlen(a);  
+    int i;
+
+    for (i = 0; i < len; i++){
+        printf("%c", a[len - i - 1]);  
     }
 
-    for (int i = 0; i < len / 2; i++) {
-        char temp = a[i];
-        a[i] = a[len - i - 1];
-        a[len - i - 1] = temp;
-    }
-
-    printf("%s\n", a); 
+    printf("\n");
     return 0;
 }
